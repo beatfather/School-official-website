@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&dispaly=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Quicksand,'sans-serif';
+}
+
+
+
+body {
+
+    z-index: 1;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    /*background: radial-gradient(200% 100% at bottom center,#f7f7b6,#e96f92,#1b2947);*/
+    /*background: radial-gradient(220% 105% at top center,#1b2947,#75517d 40%,#e96f92 65%,#f7f7b6);*/
+    /*background-attachment: fixed;*/
+    /*overflow: hidden;*/
+    align-self: center;
+    margin: 0;
+    padding: 0;
+    background-color: #a6d8f1;
+    background-image: radial-gradient(closest-side, rgb(132, 26, 246), rgba(135, 38, 243, 0)),
+    radial-gradient(closest-side, rgba(131, 105, 253, 1), rgba(131, 105, 253, 0)),
+    radial-gradient(closest-side, rgba(70, 153, 236, 1), rgba(70, 153, 236, 0)),
+    radial-gradient(closest-side, rgba(245, 148, 226, 1), rgba(245, 148, 226, 0)),
+    radial-gradient(closest-side, rgba(103, 255, 214, 1), rgba(103, 255, 214, 0));
+    background-size: 130vmax 130vmax,
+    80vmax 80vmax,
+    90vmax 90vmax,
+    110vmax 110vmax,
+    90vmax 90vmax;
+    background-position: -80vmax -80vmax,
+    60vmax -30vmax,
+    10vmax 10vmax,
+    -30vmax -10vmax,
+    50vmax 50vmax;
+    background-repeat: no-repeat;
+    animation: 10s movement linear infinite;
+
+}
+
+.navigation{
+    position: relative;
+    width:20vw;
+    height:30vh;
+    top:-30vh;
+    left:-10vw;
+
+}
+.navigation ul{
+    display: flex;
+}
+.navigation ul li
+{
+    position: relative;
+    list-style:none;
+    width:15vw;
+    height:15vh;
+    z-index: 1;
+}
+.navigation ul li a
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #ffffff;
+    text-align: center;
+}
+.navigation ul li a .icon
+{
+    position: relative;
+    line-height:15vh;
+    transition: 0.5s;
+    font-size: 5vh;
+}
+.navigation ul li.active a .icon
+{
+    font-size: 10vh;
+    transform: translateY(-6px);
+}
+.navigation ul li a .text{
+    position: absolute;
+    font-size: 15px;
+    color: #fff;
+    bottom: 15px;
+    font-weight: 500;
+    transition: 0.25s;
+    text-transform:uppercase;
+    transform: scale(0);
+}
+.navigation ul li.active a .text
+{
+    transform:scale(1);
+}
+.indicator
+{
+    position: absolute;
+    left: 0;
+    width:10vw;
+    height:15vh;
+    background: #d07cee;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.navigation ul li:nth-child(1).active ~.indicator
+{
+    background: #695cf3;
+    box-shadow: 0 25px 30px #ffffff;
+    transform: translate(calc(10vw * 0));
+}
+.navigation ul li:nth-child(2).active ~.indicator
+{
+    background: #ba59f8;
+    box-shadow: 0 25px 25px #ffffff;
+    transform: translate(calc(10vw * 1));
+}
+
+.dropdown{
+    display: flex;
+    position: relative;
+    left:-20vw;
+    top:-55vh;
+    margin-top: 30vh;
+    width:200px;
+    height:50px;
+}
+
+.dropdown::before{
+    content:'';
+    position: absolute;
+    right: 20px;
+    top:15px;
+    z-index: 1000000;
+    width: 8px;
+    height: 8px;
+    border:2px solid #333;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(-45deg);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.dropdown.active::before{
+    top:22px;
+    transform: rotate(-225deg);
+}
+.dropdown input{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: #ffffff;
+    border:none;
+    outline: none;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    padding: 12px 20px;
+    border-radius: 10px;
+
+}
+.dropdown .option
+{
+    font-size: 20px;
+    position: absolute;
+    top:70px;
+    width:100%;
+    background: #ffffff;
+    box-shadow: 0 30px 30px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+}
+.dropdown.active .option{
+    display: block;
+}
+.dropdown .option div
+{
+    padding: 12px 20px;
+    cursor: pointer;
+}
+.dropdown .option div:hover
+{
+    background: #62baea;
+    color: #ffffff;
+}
+.dropdown .option div ion-icon
+{
+    position: relative;
+    top: 4px;
+    font-size: 1.2em;
+}
+
+.logo{
+    position: fixed;
+    z-index: 10000;
+    width:5vw;
+    height: 10vh;
+    top:20px;
+    left:80px;
+
+}
+
+.logo .icon{
+    position: fixed;
+    line-height:10vh;
+    transition: 0.5s;
+    font-size: 25vh;
+    background: rgba(255,255,255,0.2);
+}
+
+.logotext{
+    position: fixed;
+    z-index: 10000;
+    left:-1px;
+    top:-70px;
+    margin-top: 30vh;
+    width:700px;
+    height:60px;
+
+}
+.logotext .text{
+    position: absolute;
+    font-size: 25px;
+    color: #fff;
+    font-weight: 500;
+    bottom: 5px;
+}
+
+.swipe{
+
+    position: relative;
+    left: 23vw;
+    top: 36vh;
+    height: 75vh;
+    width: 50vw;
+
+    overflow: hidden;
+}
+
+.swipe .bg{
+
+    position: absolute;
+    width: 500%;
+    height: 100%;
+    z-index: 1;
+    background-image: url("../imagebox/1.png");
+    background-size: 6000px;
+    background-position: center center;
+
+    filter: blur(140px);
+}
+
+.swipe section{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1500px;
+    height: 600px;
+
+    margin: 0 auto;
+}
+
+.swipe .img-box{
+    width: 100%;
+    height: 100%;
+}
+
+.swipe .img-box .img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swipe .select{
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    bottom: 20px;
+    text-align: center;
+}
+.swipe .select .item{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 10px;
+    /* 阴影 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+.swipe .select .item:hover{
+    background-color: #ff4400;
+}
+
+.swipe .select .item.checked{
+    background-color: #ff4400;
+}
+.swipe .btn{
+    z-index: 10;
+    width: 70px;
+    height: 100px;
+    color: #ffffff;
+    /* 绝对定位 垂直居中 */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 70px;
+    background-color: rgba(0,0,0,0.1);
+    /* 弹性布局 居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 鼠标移入光标变小手 */
+    cursor: pointer;
+    /* 动画过渡 */
+    transition: 0.3s;
+}
+.swipe .btn.left{
+    z-index: 10000;
+    left: -100px;
+}
+.swipe .btn.right{
+    z-index: 10000;
+    right: -100px;
+}
+.swipe .btn:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+
+.contactus{
+    position: absolute;
+    background-color: rgba(89, 87, 87, 0.96);
+    left: 0px;
+    width: 100%;
+    height: 350px;
+    top: 280%;
+}
+
+
+.showimage{
+    position: absolute;
+    background-color: rgba(255, 253, 253, 0.58);
+    left: 0px;
+    width: 100%;
+    height: 650px;
+    top: 45%;
+}
+.showcard{
+    position: absolute;
+    background-color: rgba(114, 94, 155, 0.2);
+    left: 0px;
+    width: 100%;
+    height: 580px;
+    top: 165%;
+}
+.subtitle{
+    position: absolute;
+    font-size: 60px;
+    top: 145%;
+    left: 30%;
+}
+
+
+#The1{
+    position:absolute;
+    top:52%;
+    width:350px;
+    left: 0px;
+}
+#The2{
+    position:absolute;
+    top:90%;
+    width:350px;
+    left: 0px;
+}
+
+.introtext{
+    position:absolute;
+    font-family: Tahoma;
+    font-size:5rem;
+
+    top:25%;
+    width:400px;
+     height: 900px;
+    left: 75%;
+    background: radial-gradient(200% 100% at bottom center, #f7f7b6,#e96f92, #b18cfc);
+    background: radial-gradient(220% 105% at top center, #73538c 10%, #9c68b2 40%,#e96f92 65%, #f7f7b6 );
+    background-attachment: fixed;
+    border-radius: 30px;
+
+}
+
+.container{
+    width: 1450px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: absolute;
+    top:172%;
+    left: 2%;
+}
+.box{
+    position: relative;
+    width: 300px;
+    height: 470px;
+    background: #000;
+    box-shadow: 0 30px 30px rgba(0,0,0,.5);
+}
+
+.box .imgbx{
+position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.box .imgbx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.box:hover .imgbx img{
+    opacity: 0;
+}
+
+.box .content{
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+    width: 80%;
+    height: 60px;
+    background: #ffffff;
+    border-radius: 10px;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.box:hover .content{
+    height: 80%;
+    width: 80%;
+    bottom: 10%;
+    left: 10%;
+}
+.box .content h2{
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+}
+
+.box .content p{
+    margin: 10px 0 0;
+    padding: 0;
+    opacity: 0;
+    line-height: 1.2em;
+    transition: 0.5s;
+    text-align: justify;
+}
+
+.box:hover .content p{
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+
+
+.contactus .icon_con{
+   margin: 0 20px;
+    display: inline;
+    top: 10px;
+    font-size: 50px ;
+}
+
+
+@media screen and (max-width:1620px){
+    .swipe .btn.left{
+        left: 20px;
+    }
+    .swipe .btn.right{
+        right: 20px;
+    }
+}
+
+@keyframes text-in {
+    from{
+        width: 0ch;
+    }to{
+         width:1ch;
+     }
+}
+
+
+
+
+
+@keyframes movement{
+    0%,100%{background-size:
+            130vmax 130vmax,
+            80vmax 80vmax,
+            90vmax 90vmax,
+            110vmax 110vmax,
+            90vmax 90vmax;
+        background-position:
+                -80vmax -80vmax,
+                60vmax -30vmax,
+                10vmax 10vmax,
+                -30vmax -10vmax,
+                50vmax 50vmax;
+    }
+    25%{background-size:
+            100vmax 100vmax,
+            90vmax 90vmax,
+            100vmax 100vmax,
+            90vmax 90vmax,
+            60vmax 60vmax;
+        background-position:
+                -60vmax -90vmax,
+                50vmax -40vmax,
+                0vmax -20vmax,
+                -40vmax -20vmax,
+                40vmax 50vmax;
+    }
+    50%{background-size:
+            80vmax 80vmax,
+            110vmax 110vmax,
+            80vmax 80vmax,
+            60vmax 60vmax,
+            80vmax 80vmax;
+        background-position:
+                -50vmax -70vmax,
+                40vmax -30vmax,
+                10vmax 0vmax,
+                20vmax 10vmax,
+                30vmax 70vmax;
+    }
+    75%{background-size:
+            90vmax 90vmax,
+            90vmax 90vmax,
+            100vmax 100vmax,
+            90vmax 90vmax,
+            70vmax 70vmax;
+        background-position:
+                -50vmax -40vmax,
+                50vmax -30vmax,
+                20vmax 0vmax,
+                -10vmax 10vmax,
+                40vmax 60vmax;
+    }
+
+
+
+
+
+
+
+
+
+}
