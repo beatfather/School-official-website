@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Postgraduate</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300">
+    <link rel="stylesheet" href="../Css_Sort/bootstrap.min.css">
+    <link rel="stylesheet" href="../fontawesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../Css_Sort/stustyle.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this in a new browser such as latest version of Chrome or Apple Safari.");
+    </script>
+</head>
+
+<body>
+
+
+    <div id="stupost">
+
+    </div>
+    <div id="stu-in">
+
+        <div class="stu-content">
+            <div class="container stu-header-container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-md-col-xl-6 mb-md-0 mb-sm-4 mb-4 stu-header-container-col">
+                        <div class="stu-header">
+                            <h1 class="mb-4">Postgraduate</h1>
+                            <img src="../image/underline.jpg" class="img-fluid mb-4">
+                            <p>Here you can find detailed information about our postgraduate program</p>        
+                        </div>                        
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div class="content">
+                            <div class="grid">
+                                <div class="grid__item" id="intro">
+                                    <div class="stuinfo">
+                                        <div class="stu-link">
+                                            <i class="fas fa-home fa-3x stu-nav-icon"></i>
+                                            <span class="stu-text">Introduction</span>
+                                            <div class="stuinfo__bg"></div>        
+                                        </div>                                    
+                                        <div class="stuinfo__description">
+                                            <div class="row mb-3">
+                                                <div class="col-12">
+                                                    <h2 class="stu-title">About postgraduate program</h2>        
+                                                </div>
+                                            </div>                                        
+                                            <div class="row">
+                                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                    <img src="../image/intro3.jpg" class="img-fluid mb-3">
+                                                    <p>As a comprehensive research university, we offer graduate programs involving a variety of disciplines, including taught masters and research Masters. </p>  
+                                                </div>
+                                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                    <p>We have excellent and dedicated teachers and management team to ensure the efficiency and completeness of the project. </p>
+                                                    <img src="../image/intro4.jpg" class="img-fluid">
+                                                </div>                                        
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid__item" id="require">
+                                    <div class="stuinfo">
+                                        <div class="stu-link">
+                                            <i class="fas fa-users fa-3x stu-nav-icon"></i>
+                                            <span class="stu-text">Requirement</span>
+                                            <div class="stuinfo__bg"></div>            
+                                        </div>                                     
+                                        <div class="stuinfo__description">
+                                            <div class="p-sm-4 p-2">
+                                                <div class="row mb-3">
+                                                    <div class="col-12">
+                                                        <h2 class="stu-title">Admission Requiments</h2>        
+                                                    </div>
+                                                </div>
+                                                <div class="row tm-reverse-sm">
+                                                    <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                                        <p class="mb-4">Your undergraduate courses and grades are particularly important for applying for a master's program. Please provide your report card. We will comprehensively consider the relevance of your undergraduate major and the project you are applying for. At the same time, a qualified language score (IELTS or TOEFL) is also required.</p>
+                                                        <p class="mb-4">At this stage, we must also consider the comprehensive ability of the applicant. Including whether they have scientific research achievements, papers, sufficient practical experience, etc. </p>     
+                                                    </div>                                                
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-lg-0 mb-sm-4 mb-4">
+                                                        <img src="../image/adm.jpg" class="img-fluid">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>                       
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    <script src="../Jsp_Sort/main.js"></script>
+    <script src="../Jsp_Sort/jquery-3.4.1.min.js"></script>
+    <script src="../Jsp_Sort/anime.min.js"></script>
+    <script>      
+
+        function setupFooter() {
+            var pageHeight = $('.stu-header-container').height() + $('footer').height() + 100;
+
+            var main = $('.stu-content');
+
+            if($(window).height() < pageHeight) {
+                main.addClass('stu-footer-relative');
+            }
+            else {
+                main.removeClass('stu-footer-relative');   
+            }
+        }
+    </script>             
+</body>
+</html>
